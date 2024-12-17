@@ -10,6 +10,7 @@ export default defineConfig({
     outDir: "./build",
     emptyOutDir: true,
   },
+  base: "/pwa-workshop-installable/",
   plugins: [
     react(),
     /** Plugin for serving/building service worker from  sw.ts file
@@ -38,7 +39,7 @@ export default defineConfig({
         // Used to specify one or more image files that define the icons to represent web application
         icons: [
           {
-            src: "/pwa-logo.svg",
+            src: `/pwa-workshop-installable/pwa-logo.svg`,
             sizes: "800x800",
             type: "image/svg+xml",
           },
@@ -62,13 +63,13 @@ export default defineConfig({
         // These images help users preview web app's interface and features in app stores.
         screenshots: [
           {
-            src: "/screenshots/image.jpg",
+            src: `/pwa-workshop-installable/screenshots/image.jpg`,
             sizes: "1280x720",
             type: "image/jpeg",
             form_factor: "wide",
           },
           {
-            src: "/screenshots/image.jpg",
+            src: `/pwa-workshop-installable/screenshots/image.jpg`,
             sizes: "1280x720",
             type: "image/jpeg",
             form_factor: "narrow",

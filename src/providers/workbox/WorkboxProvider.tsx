@@ -13,8 +13,10 @@ export function WorkerProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if ("serviceWorker" in navigator) {
       const sw = new Workbox(
-        import.meta.env.MODE === "production" ? "/sw.js" : "/dev-sw.js?dev-sw",
-        { type: "module", scope: "./" },
+        import.meta.env.MODE === "production"
+          ? `${import.meta.env.BASE_URL}sw.js`
+          : `${import.meta.env.BASE_URL}dev-sw.js?dev-sw`,
+        { type: "module", scope: import.meta.env.BASE_URL },
       );
       setWorker(sw);
       sw.register();
