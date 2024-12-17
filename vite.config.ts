@@ -5,6 +5,11 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
+  root: "./",
+  build: {
+    outDir: "./build",
+    emptyOutDir: true,
+  },
   plugins: [
     react(),
     /** Plugin for serving/building service worker from  sw.ts file
